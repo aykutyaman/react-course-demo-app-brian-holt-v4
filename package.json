@@ -7,7 +7,10 @@
     "format": "prettier --write \"src/**/*.{js,jsx,css,html,cjon}\" ",
     "format:check": "prettier --list-different \"src/**/*.{js,jsx,css,html,cjon}\" ",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --silent",
+    "test:watch": "jest --silent --watch",
+    "test:update": "jest --silent -u",
+    "test:coverage": "jest --silent --coverage",
     "dev": "parcel src/index.html"
   },
   "keywords": [],
@@ -19,19 +22,24 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "eslint": "^5.12.1",
+    "eslint": "^5.13.0",
     "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jsx-a11y": "^6.2.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
+    "jest": "^23.5.0",
     "parcel-bundler": "^1.11.0",
-    "prettier": "^1.16.1"
+    "prettier": "^1.16.4",
+    "react-test-renderer": "^16.4.2"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.7",
+    "@emotion/styled": "^10.0.7",
     "@reach/router": "^1.2.1",
     "petfinder-client": "^0.0.3",
-    "react": "15.x || 16.x || 16.4.0-alpha.0911da3",
-    "react-dom": "15.x || 16.x || 16.4.0-alpha.0911da3"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "react-emotion": "^10.0.0"
   }
 }

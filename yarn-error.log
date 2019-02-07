@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /home/aykut/.yarn/bin/yarn.js add peftinder-client
+  /usr/local/bin/node /home/aykut/.yarn/bin/yarn.js add babel-core -D
 
 PATH: 
   /usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/home/aykut/Apps/fem/node_modules/.bin:/home/aykut/.yarn/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -14,17 +14,12 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.npmjs.org/peftinder-client: Not found
-      at Request.params.callback [as _callback] (/home/aykut/.yarn/lib/cli.js:65894:18)
-      at Request.self.callback (/home/aykut/.yarn/lib/cli.js:129018:22)
-      at Request.emit (events.js:182:13)
-      at Request.<anonymous> (/home/aykut/.yarn/lib/cli.js:129990:10)
-      at Request.emit (events.js:182:13)
-      at IncomingMessage.<anonymous> (/home/aykut/.yarn/lib/cli.js:129912:12)
-      at Object.onceWrapper (events.js:273:13)
-      at IncomingMessage.emit (events.js:187:15)
-      at endReadableNT (_stream_readable.js:1081:12)
-      at process._tickCallback (internal/process/next_tick.js:63:19)
+  SyntaxError: /home/aykut/Apps/fem/package.json: Unexpected token } in JSON at position 1278
+      at JSON.parse (<anonymous>)
+      at /home/aykut/.yarn/lib/cli.js:1631:59
+      at Generator.next (<anonymous>)
+      at step (/home/aykut/.yarn/lib/cli.js:304:30)
+      at /home/aykut/.yarn/lib/cli.js:315:13
 
 npm manifest: 
   {
@@ -36,7 +31,10 @@ npm manifest:
       "format": "prettier --write \"src/**/*.{js,jsx,css,html,cjon}\" ",
       "format:check": "prettier --list-different \"src/**/*.{js,jsx,css,html,cjon}\" ",
       "lint": "eslint \"src/**/*.{js,jsx}\"",
-      "test": "echo \"Error: no test specified\" && exit 1",
+      "test": "jest --silent",
+      "test:watch": "jest --silent --watch",
+      "test:update": "jest --silent -u",
+      "test:coverage": "jest --silent --coverage",
       "dev": "parcel src/index.html"
     },
     "keywords": [],
@@ -48,20 +46,23 @@ npm manifest:
       "babel-plugin-transform-class-properties": "^6.24.1",
       "babel-preset-env": "^1.7.0",
       "babel-preset-react": "^6.24.1",
-      "eslint": "^5.12.1",
+      "eslint": "^5.13.0",
       "eslint-config-prettier": "^4.0.0",
       "eslint-plugin-import": "^2.16.0",
-      "eslint-plugin-jsx-a11y": "^6.2.0",
+      "eslint-plugin-jsx-a11y": "^6.2.1",
       "eslint-plugin-prettier": "^3.0.1",
       "eslint-plugin-react": "^7.12.4",
+      "jest": "^23.5.0",
       "parcel-bundler": "^1.11.0",
-      "prettier": "^1.16.1"
+      "prettier": "^1.16.4",
+      "react-test-renderer": "^16.4.2"
     },
     "dependencies": {
       "@reach/router": "^1.2.1",
+      "emotion": "^10.0.7",
       "petfinder-client": "^0.0.3",
-      "react": "15.x || 16.x || 16.4.0-alpha.0911da3",
-      "react-dom": "15.x || 16.x || 16.4.0-alpha.0911da3"
+      "react": "^16.8.0",
+      "react-dom": "^16.8.0",
     }
   }
 
