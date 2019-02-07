@@ -11,7 +11,9 @@
     "test:watch": "jest --silent --watch",
     "test:update": "jest --silent -u",
     "test:coverage": "jest --silent --coverage",
-    "dev": "parcel src/index.html"
+    "dev": "parcel src/index.html",
+    "build": "parcel build --public-url ./dist/ src/index.html",
+    "start": "npm run build && babel-node server.js"
   },
   "keywords": [],
   "author": "",
@@ -37,6 +39,8 @@
     "@emotion/core": "^10.0.7",
     "@emotion/styled": "^10.0.7",
     "@reach/router": "^1.2.1",
+    "babel-cli": "^6.26.0",
+    "express": "^4.16.4",
     "petfinder-client": "^0.0.3",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",

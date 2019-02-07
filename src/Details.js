@@ -10,13 +10,6 @@ const petfinder = pf({
   secret: process.env.API_SECRET
 });
 
-const loading = () => <div>loading content</div>;
-
-const LoadableContent = Loadable({
-  loader: () => import("./AdoptModalContent"),
-  loading
-});
-
 class Details extends React.Component {
   state = {
     loading: true,
@@ -80,7 +73,7 @@ class Details extends React.Component {
         <p>{description}</p>
         {showModal ? (
           <Modal>
-            <LoadableContent toggleModal={this.toggleModal} name={name} />
+            <AdoptModalContent toggleModal={this.toggleModal} name={name} />
           </Modal>
         ) : null}
       </div>
